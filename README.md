@@ -19,7 +19,7 @@ There’s no proper commit history because it wasn’t developed using GitHub.
     </tr>
     <tr>
         <td><strong>2023</strong></td>
-        <td><a href="#">PDI</a></td>
+        <td><a href="https://github.com/Devmilana/PDI">PDI</a></td>
         <td><a href="#">UNIX and C</a>, <a href="#">DSA</a></td>
     </tr>
     <tr>
