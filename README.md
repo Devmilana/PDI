@@ -8,13 +8,26 @@ There’s no proper commit history because it wasn’t developed using GitHub.
 
 ## Coursework
 
-| **Curtin University • Bachelor of Computing (Majoring in Software Engineering)** |  
-|----------------------------------------------------------------------------------|  
-| **Year**  | **Semester 1**                          | **Semester 2**                         |  
-|-----------|--------------------------------|--------------------------------|  
-| **2023**  | [PDI]()                         | [UNIX and C](), [DSA]()        |  
-| **2024**  | [OOSE](), [OS]()                | [MAD](), [DC](), [DBS]()       |
-
+<table>
+    <tr>
+        <th colspan="3">Curtin University • Bachelor of Computing (Majoring in Software Engineering)</th>
+    </tr>
+    <tr>
+        <th>Year</th>
+        <th>Semester 1</th>
+        <th>Semester 2</th>
+    </tr>
+    <tr>
+        <td><strong>2023</strong></td>
+        <td><a href="#">PDI</a></td>
+        <td><a href="#">UNIX and C</a>, <a href="#">DSA</a></td>
+    </tr>
+    <tr>
+        <td><strong>2024</strong></td>
+        <td><a href="#">OOSE</a>, <a href="#">OS</a></td>
+        <td><a href="#">MAD</a>, <a href="#">DC</a>, <a href="#">DBS</a></td>
+    </tr>
+</table>
 
 ---
 
