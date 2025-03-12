@@ -1,0 +1,118 @@
+CLASS Location
+
+    CLASS FIELDS:
+        latitude                (double)
+        longitude               (double)
+        coordinateSystem        (String)
+
+    CONSTRUCTOR WITH PARAMETERS
+    IMPORTS:    pLatitude (double), pLongitude (double), pCoordinateSystem (String)
+    EXPORTS:    None
+    ASSERTION:  Location object created with imported values.
+    ALGORITHM:
+        latitude <- pLatitude
+        longitude <- pLongitude
+        coordinateSystem <- pCoordinateSystem
+
+    COPY CONSTRUCTOR
+    IMPORT: pLocation (Location)
+    EXPORT: None
+    ASSERTION: Object created as a copy of the imported object.
+    ALGORITHM:
+        latitude <- CALL getLatitude ON pLocation
+        longitude <- CALL getLongitude ON pLocation
+        coordinateSystem <- CALL getCoordinateSystem ON pLocation
+
+    ACCESSOR: getLatitude
+    IMPORT: None
+    EXPORT: latitude (double)
+    ALGORITHM:
+        EXPORT latitude
+
+    ACCESSOR: getLongitude
+    IMPORT: None
+    EXPORT: longitude (double)
+    ALGORITHM:
+        EXPORT longitude
+
+    ACCESSOR: getCoordinateSystem
+    IMPORT: None
+    EXPORT: coordinateSystem (String)
+    ALGORITHM:
+        EXPORT coordinateSystem
+
+    MUTATOR: setLatitude
+    IMPORT: pLatitude
+    EXPORT: None
+    ASSERTION: State of latitude is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidLatitude(pLatitude) is true THEN
+            latitude <- pLatitude
+        ELSE
+            OUTPUT "Invalid entry detected! Latitude must be a valid value."
+        END IF
+
+    MUTATOR: setLongitude
+    IMPORT: pLongitude
+    EXPORT: None
+    ASSERTION: State of longitude is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidLongitude(pLongitude) is true THEN
+            longitude <- pLongitude
+        ELSE
+            OUTPUT "Invalid entry detected! Longitude must be a valid value."
+        END IF
+
+    MUTATOR: setCoordinateSystem
+    IMPORT: pCoordinateSystem
+    EXPORT: None
+    ASSERTION: State of coordinateSystem is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidString(pCoordinateSystem) is true THEN
+            coordinateSystem <- pCoordinateSystem
+        ELSE
+            OUTPUT "Invalid entry detected! CoordinateSystem cannot be null."
+        END IF
+
+    METHOD: isValidLatitude
+    IMPORT: latitude (double)
+    EXPORT: boolean
+    ASSERTION: latitude value is between -90 and 90 (inclusive)
+    ALGORITHM:
+        EXPORT: latitude >= -90 AND latitude <= 90
+
+    METHOD: isValidLongitude
+    IMPORT: longitude (double)
+    EXPORT: boolean
+    ASSERTION: longitude value is between -180 and 180 (inclusive)
+    ALGORITHM:
+        EXPORT: longitude >= -180 AND longitude <= 180
+
+    METHOD: isValidString
+    IMPORT: String value (String)
+    EXPORT: boolean
+    ASSERTION: String value is not null
+    ALGORITHM:
+        EXPORT: str != null
+
+    METHOD: toString
+    IMPORT: None
+    EXPORT: locationString (String)
+    ASSERTION: Returns a String representation of the object.
+    ALGORITHM:
+        locationString <- "(" + latitude + ", " + longitude + "), Coordinate System: " + coordinateSystem
+        EXPORT locationString
+
+    METHOD: equals
+    IMPORT: inLocation (Object)
+    EXPORT: isEqual (Boolean)
+    ASSERTION: Returns true if two objects are equivalent.
+    ALGORITHM:
+        isEqual <- FALSE
+        IF latitude EQUALS CALL getLatitude ON inLocation:
+            IF longitude EQUALS CALL getLongitude ON inLocation:
+                IF coordinateSystem EQUALS CALL getCoordinateSystem ON inLocation:
+                    isEqual <- TRUE
+        EXPORT isEqual
+
+END CLASS

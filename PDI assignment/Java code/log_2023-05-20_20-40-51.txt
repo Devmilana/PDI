@@ -1,0 +1,121 @@
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Welcome to the Investments in Indigenous community infrastructure Program. There are a total of 9037 projects throughout Canada.
+
+Please make a selection from the Menu below.
+> 1. All of Canada
+> 2. Alberta
+> 3. British Columbia
+> 4. Manitoba
+> 5. New Brunswick
+> 6. Newfoundland and Labrador
+> 7. Nova Scotia
+> 8. Ontario
+> 9. Prince Edward Island
+> 10. Quebec
+> 11. Saskatchewan
+> 12. Northwest Territories
+> 13. Nunavut
+> 14. Yukon
+> 0. Exit Program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+Total number of projects in Canada: 9037
+Total number of ongoing projects: 4236
+Total number of completed projects: 4801
+Percentage of completed projects: 53.12603740179262%
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Welcome to the Investments in Indigenous community infrastructure Program. There are a total of 9037 projects throughout Canada.
+
+Please make a selection from the Menu below.
+> 1. All of Canada
+> 2. Alberta
+> 3. British Columbia
+> 4. Manitoba
+> 5. New Brunswick
+> 6. Newfoundland and Labrador
+> 7. Nova Scotia
+> 8. Ontario
+> 9. Prince Edward Island
+> 10. Quebec
+> 11. Saskatchewan
+> 12. Northwest Territories
+> 13. Nunavut
+> 14. Yukon
+> 0. Exit Program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please make a choice from the statistics below for Quebec:
+> 1. Number of projects
+> 2. Percentage of all projects located in this province/territory
+> 3. Total number and percentage of Ongoing projects
+> 4. Total number and percentage of Completed projects
+> 5. All of the above statistics
+> 0. Return to main menu
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+The total number of projects in the Quebec province: 1186
+
+The percentage of all projects located in the Quebec province: 13.123824277968351%
+
+The number of ongoing projects located in the Quebec province: 228
+The percentage of all ongoing projects located in the Quebec province out of all ongoing projects in Canada: 5.382436260623229
+
+The number of completed projects located in the Quebec province: 958
+The percentage of all completed projects located in the Quebec province out of all completed projects in Canada: 19.9541762132889
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please make a choice from the statistics below for Quebec:
+> 1. Number of projects
+> 2. Percentage of all projects located in this province/territory
+> 3. Total number and percentage of Ongoing projects
+> 4. Total number and percentage of Completed projects
+> 5. All of the above statistics
+> 0. Return to main menu
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Welcome to the Investments in Indigenous community infrastructure Program. There are a total of 9037 projects throughout Canada.
+
+Please make a selection from the Menu below.
+> 1. All of Canada
+> 2. Alberta
+> 3. British Columbia
+> 4. Manitoba
+> 5. New Brunswick
+> 6. Newfoundland and Labrador
+> 7. Nova Scotia
+> 8. Ontario
+> 9. Prince Edward Island
+> 10. Quebec
+> 11. Saskatchewan
+> 12. Northwest Territories
+> 13. Nunavut
+> 14. Yukon
+> 0. Exit Program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+Thank you for using this program! Exiting now...
+

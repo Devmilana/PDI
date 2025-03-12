@@ -1,0 +1,428 @@
+BEGIN 
+
+    MAIN:
+        CREATE projects ARRAY
+
+        DUPLICATE OUTPUT TO CONSOLE AND logFileName
+           
+        initialiseArray()
+        addProjectsToArray()
+        displayMenuSelection()
+    END MAIN
+
+    
+    METHOD: initialiseArray
+    IMPORT: projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+        
+         filestream = null
+         rdr
+         br
+         line
+            filestream = new FileInputStream(FILENAME)
+            rdr = new InputStreamReader(filestream)
+            br = new BufferedReader(rdr)
+            line = br.readLine()
+            count = 0
+            WHILE line != null
+                count++
+                line = br.readLine()
+            END WHILE
+            CLOSE br
+            projects = new Project[count]
+    END initialiseArray
+
+    
+    METHOD: addProjectsToArray
+    IMPORT: projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+        filestream = null
+        rdr
+        br
+        line
+            filestream = new FileInputStream(FILENAME)
+            rdr = new InputStreamReader(filestream)
+            br = new BufferedReader(rdr)
+            line = br.readLine()
+            count = 0
+            WHILE line != null
+                data = line.split(",")
+                province = data[0]
+                beneficiary = data[1]
+                beneficiaryNum = data[2]
+                assetClass = data[3]
+                name = data[4]
+                stage = data[6]
+                latitude = Double.parseDouble(data[7])
+                longitude = Double.parseDouble(data[8])
+                coordinateSystem = data[9]
+                location = new Location(latitude, longitude, coordinateSystem)
+                project = new Project(province, beneficiary, beneficiaryNum, assetClass, name, stage, location)
+                projects[count] = project
+                count++
+                line = br.readLine()
+            END WHILE
+            CLOSE br
+    END addProjectsToArray
+
+    
+    METHOD: displayMenuSelection
+    IMPORT: projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+        
+        choice = -1
+        MAX_INVALID_CHOICES = 3
+        invalidChoices = 0
+        sc = new Scanner(System.in)
+        
+        WHILE choice is not equal to 0 DO
+            PRINT ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+            PRINT "\nWelcome to the Investments in Indigenous community infrastructure Program. There are a total of " + projects.length + " projects throughout Canada."
+            PRINT "\nPlease make a selection from the Menu below."
+            PRINT "> 1. All of Canada"
+            PRINT "> 2. Alberta"
+            PRINT "> 3. British Columbia"
+            PRINT "> 4. Manitoba"
+            PRINT "> 5. New Brunswick"
+            PRINT "> 6. Newfoundland and Labrador"
+            PRINT "> 7. Nova Scotia"
+            PRINT "> 8. Ontario"
+            PRINT "> 9. Prince Edward Island"
+            PRINT "> 10. Quebec"
+            PRINT "> 11. Saskatchewan"
+            PRINT "> 12. Northwest Territories"
+            PRINT "> 13. Nunavut"
+            PRINT "> 14. Yukon"
+            PRINT "> 0. Exit Program"
+            PRINT "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+            PRINT "\nPlease type in your selection: "
+            
+            TRY
+                choice = PARSE NEXT LINE TO INTEGER
+                
+                IF choice is less than 0 OR choice is greater than 14 THEN
+                    PRINT "Invalid selection number. Please re-enter your selection."
+                    invalidChoices = invalidChoices + 1
+                ELSE
+                    SWITCH choice DO
+                        CASE 1:
+                            displayAllProjects()
+                            BREAK
+                        CASE 2:
+                            displayProvincesMenu("Alberta")
+                            BREAK
+                        CASE 3:
+                            displayProvincesMenu("British Columbia")
+                            BREAK
+                        CASE 4:
+                            displayProvincesMenu("Manitoba")
+                            BREAK
+                        CASE 5:
+                            displayProvincesMenu("New Brunswick")
+                            BREAK
+                        CASE 6:
+                            displayProvincesMenu("Newfoundland and Labrador")
+                            BREAK
+                        CASE 7:
+                            displayProvincesMenu("Nova Scotia")
+                            BREAK
+                        CASE 8:
+                            displayProvincesMenu("Ontario")
+                            BREAK
+                        CASE 9:
+                            displayProvincesMenu("Prince Edward Island")
+                            BREAK
+                        CASE 10:
+                            displayProvincesMenu("Quebec")
+                            BREAK
+                        CASE 11:
+                            displayProvincesMenu("Saskatchewan")
+                            BREAK
+                        CASE 12:
+                            displayProvincesMenu("Northwest Territories")
+                            BREAK
+                        CASE 13:
+                            displayProvincesMenu("Nunavut")
+                            BREAK
+                        CASE 14:
+                            displayProvincesMenu("Yukon")
+                            BREAK
+                        CASE 0:
+                            PRINT "Thank you for using this program! Exiting now..."
+                            PRINT ""
+                            BREAK
+                        DEFAULT:
+                            PRINT "Invalid selection number. Please re-enter your selection."
+                            invalidChoices = invalidChoices + 1
+                    ENDSWITCH
+                ENDIF
+                
+                IF invalidChoices is greater than or equal to MAX_INVALID_CHOICES THEN
+                    PRINT "Exceeded number of invalid selections. Exiting the program..."
+                    RETURN
+                ENDIF
+            
+            CATCH NumberFormatException THEN
+                PRINT "Error! Selection needs to be an Integer!"
+                invalidChoices = invalidChoices + 1
+                IF invalidChoices is greater than or equal to MAX_INVALID_CHOICES THEN
+                    PRINT "Exceeded number of invalid selections. Exiting the program..."
+                    RETURN
+                ENDIF
+            
+            CATCH NumberFormatException THEN
+                PRINT "Error! Selection needs to be an Integer!"
+                invalidChoices <- invalidChoices + 1
+                IF invalidChoices is greater than or equal to MAX_INVALID_CHOICES THEN
+                    PRINT "Exceeded number of invalid selections. Exiting the program..."
+                    RETURN
+                ENDIF
+        
+            CATCH Exception THEN
+                PRINT "An error occurred: " + e.getMessage()
+                RETURN
+            
+            ENDTRY
+        
+        ENDWHILE
+    END METHOD displayMenuSelection
+
+    
+    METHOD: displayAllProjects
+    IMPORT: projets ARRAY
+    EXPORT: None
+    ALGORITHM:
+
+        totProjects = projects.length
+        ongProjects = 0
+        compProjects = 0
+        compPercentage = 0.0
+        
+        FOR i = 0 TO projects.length - 1 INCREMENT BY 1 DO
+            project = projects[i]
+            
+            IF project.getStage().equalsIgnoreCase("Ongoing") THEN
+                ongProjects = ongProjects + 1
+            ELSE IF project.getStage().equalsIgnoreCase("Completed") THEN
+                compProjects = compProjects + 1
+            ENDIF
+        ENDFOR
+        
+        compPercentage = (compProjects / totProjects) * 100
+        
+        PRINT "\nTotal number of projects in Canada: " + totProjects
+        PRINT "Total number of ongoing projects: " + ongProjects
+        PRINT "Total number of completed projects: " + compProjects
+        PRINT "Percentage of completed projects: " + compPercentage + "%"
+    END METHOD displayAllProjects
+
+
+    METHOD: displayProvincesMenu
+    IMPORT: province (String), projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+
+        choice = -1
+        MAX_INVALID_CHOICES = 3
+        invalidChoices = 0
+        sc = new Scanner(System.in)
+
+        WHILE choice is not equal to 0 DO
+            PRINT ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+            PRINT "\nPlease make a choice from the statistics below for " + province + ":"
+            PRINT "> 1. Number of projects"
+            PRINT "> 2. Percentage of all projects located in this province/territory"
+            PRINT "> 3. Total number and percentage of Ongoing projects"
+            PRINT "> 4. Total number and percentage of Completed projects"
+            PRINT "> 5. All of the above statistics"
+            PRINT "> 0. Return to main menu"
+            PRINT "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+            PRINT "\nPlease type in your selection: "
+
+            TRY
+                choice = PARSE NEXT LINE TO INTEGER
+
+                IF choice is less than 0 OR choice is greater than 5 THEN
+                    PRINT "Invalid selection number. Please re-enter your selection."
+                    invalidChoices = invalidChoices + 1
+                ELSE
+                    SWITCH choice DO
+                        CASE 1:
+                            totalProjectsInProvince(province)
+                            BREAK
+                        CASE 2:
+                            percentageProjectsInProvince(province)
+                            BREAK
+                        CASE 3:
+                            percentageOngoingInProvince(province)
+                            BREAK
+                        CASE 4:
+                            percentageCompletedInProvince(province)
+                            BREAK
+                        CASE 5:
+                            displayAllStats(province)
+                            BREAK
+                        CASE 0:
+                            BREAK
+                        DEFAULT:
+                            PRINT "Invalid selection number. Please re-enter your selection."
+                            invalidChoices = invalidChoices + 1
+                            BREAK
+                    ENDSWITCH
+                ENDIF
+                IF invalidChoices is greater than or equal to MAX_INVALID_CHOICES THEN
+                    PRINT "Exceeded number of invalid selections. Exiting the program..."
+                    RETURN
+                ENDIF
+            
+            CATCH InputMismatchException THEN
+                PRINT "Error! Selection needs to be an Integer!"
+                invalidChoices = invalidChoices + 1
+                IF invalidChoices is greater than or equal to MAX_INVALID_CHOICES THEN
+                    PRINT "Exceeded number of invalid selections. Exiting the program..."
+                    RETURN
+                ENDIF
+            
+            CATCH Exception THEN
+                PRINT "An error occurred: " + e.getMessage()
+                RETURN
+            
+            ENDTRY
+        
+        ENDWHILE
+    END METHOD displayProvincesMenu
+
+
+    METHOD: totalProjectsInProvince
+    IMPORT: province (String), projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+
+        count = 0
+    
+        FOR i = 0 TO projects.length - 1 INCREMENT BY 1 DO
+            project = projects[i]
+            
+            IF project.getProvince().equalsIgnoreCase(province) THEN
+                count = count + 1
+            ENDIF
+        ENDFOR
+        
+        PRINT "\nThe total number of projects in the " + province + " province: " + count
+    END METHOD totalProjectsInProvince
+
+    
+    METHOD: percentageProjectsInProvince
+    IMPORT: province (String), projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+
+        totalProjCount = 0
+        numProjProvince = 0
+        projPercentage = 0.0
+        
+        FOR i = 0 TO projects.length - 1 INCREMENT BY 1 DO
+            project = projects[i]
+            
+            IF project.getStage().equalsIgnoreCase("ongoing") OR project.getStage().equalsIgnoreCase("completed") THEN
+                totalProjCount = totalProjCount + 1
+            ENDIF
+            
+            IF project.getProvince().equalsIgnoreCase(province) THEN
+                IF project.getStage().equalsIgnoreCase("ongoing") OR project.getStage().equalsIgnoreCase("completed") THEN
+                    numProjProvince = numProjProvince + 1
+                ENDIF
+            ENDIF
+        ENDFOR
+        
+        IF numProjProvince = 0 THEN
+            PRINT "\nThe percentage of all projects located in the " + province + " province: 0%"
+        ELSE
+            projPercentage = (numProjProvince / totalProjCount) * 100
+            
+            PRINT "\nThe percentage of all projects located in the " + province + " province: " + projPercentage + "%"
+        ENDIF
+    END METHOD percentageProjectsInProvince
+
+
+    METHOD: percentageOngoingInProvince
+    IMPORT: province (String), projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+        
+        totalProjCount = 0
+        numOngoing = 0
+        ongPercentage = 0.0
+
+        FOR i = 0 TO projects.length - 1 INCREMENT BY 1 DO
+            project = projects[i]
+
+            IF project.getStage().equalsIgnoreCase("ongoing") THEN
+                totalProjCount = totalProjCount + 1
+            ENDIF
+            IF project.getProvince().equalsIgnoreCase(province) THEN
+                IF project.getStage().equalsIgnoreCase("ongoing") THEN
+                    numOngoing = numOngoing + 1
+                ENDIF
+            ENDIF
+        ENDFOR
+
+        IF numOngoing = 0 THEN
+            PRINT "\nThe number of ongoing projects located in the " + province + " province: " + numOngoing
+            PRINT "\nThe percentage of all ongoing projects located in the " + province + " province out of all ongoing projects in Canada: 0%"
+        ELSE
+            ongPercentage = (numOngoing / totalProjCount) * 100
+
+            PRINT "\nThe number of ongoing projects located in the " + province + " province: " + numOngoing
+            PRINT "The percentage of all ongoing projects located in the " + province + " province out of all ongoing projects in Canada: " + ongPercentage + "%"
+        ENDIF
+    END METHOD percentageOngoingInProvince
+
+
+    METHOD: percentageCompletedInProvince
+    IMPORT: province (String), projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+
+        totalProjCount = 0
+        numCompleted = 0
+        compPercentage = 0.0
+
+        FOR i = 0 TO projects.length - 1 INCREMENT BY 1 DO
+            project = projects[i]
+
+            IF project.getStage().equalsIgnoreCase("completed") THEN
+                totalProjCount = totalProjCount + 1
+            ENDIF
+            IF project.getProvince().equalsIgnoreCase(province) THEN
+                IF project.getStage().equalsIgnoreCase("completed") THEN
+                    numCompleted = numCompleted + 1
+                ENDIF
+            ENDIF
+        ENDFOR
+
+        IF numCompleted = 0 THEN
+            PRINT "\nThe number of completed projects located in the " + province + " province: " + numCompleted
+            PRINT "The percentage of all completed projects located in the " + province + " province out of all completed projects in Canada: " + "0%"
+        ELSE
+            compPercentage = (numCompleted / totalProjCount) * 100
+
+            PRINT "\nThe number of completed projects located in the " + province + " province: " + numCompleted
+            PRINT "The percentage of all completed projects located in the " + province + " province out of all completed projects in Canada: " + compPercentage + "%"
+        ENDIF
+    END METHOD percentageCompletedInProvince
+
+
+    METHOD: displayAllStats
+    IMPORT: province (String), projects ARRAY
+    EXPORT: None
+    ALGORITHM:
+        
+        totalProjectsInProvince(province)
+        percentageProjectsInProvince(province)
+        percentageOngoingInProvince(province)
+        percentageCompletedInProvince(province)
+    END METHOD displayAllStats

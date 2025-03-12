@@ -1,0 +1,83 @@
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Welcome to the Investments in Indigenous community infrastructure Program. There are a total of 9037 projects throughout Canada.
+
+Please make a selection from the Menu below.
+> 1. All of Canada
+> 2. Alberta
+> 3. British Columbia
+> 4. Manitoba
+> 5. New Brunswick
+> 6. Newfoundland and Labrador
+> 7. Nova Scotia
+> 8. Ontario
+> 9. Prince Edward Island
+> 10. Quebec
+> 11. Saskatchewan
+> 12. Northwest Territories
+> 13. Nunavut
+> 14. Yukon
+> 0. Exit Program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+Invalid selection number. Please re-enter your selection.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Welcome to the Investments in Indigenous community infrastructure Program. There are a total of 9037 projects throughout Canada.
+
+Please make a selection from the Menu below.
+> 1. All of Canada
+> 2. Alberta
+> 3. British Columbia
+> 4. Manitoba
+> 5. New Brunswick
+> 6. Newfoundland and Labrador
+> 7. Nova Scotia
+> 8. Ontario
+> 9. Prince Edward Island
+> 10. Quebec
+> 11. Saskatchewan
+> 12. Northwest Territories
+> 13. Nunavut
+> 14. Yukon
+> 0. Exit Program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+Error! Selection needs to be an Integer!
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Welcome to the Investments in Indigenous community infrastructure Program. There are a total of 9037 projects throughout Canada.
+
+Please make a selection from the Menu below.
+> 1. All of Canada
+> 2. Alberta
+> 3. British Columbia
+> 4. Manitoba
+> 5. New Brunswick
+> 6. Newfoundland and Labrador
+> 7. Nova Scotia
+> 8. Ontario
+> 9. Prince Edward Island
+> 10. Quebec
+> 11. Saskatchewan
+> 12. Northwest Territories
+> 13. Nunavut
+> 14. Yukon
+> 0. Exit Program
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Please type in your selection: 
+
+Invalid selection number. Please re-enter your selection.
+
+Exceeded number of invalid selections. Exiting the program...

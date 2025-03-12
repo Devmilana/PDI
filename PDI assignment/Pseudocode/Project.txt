@@ -1,0 +1,204 @@
+CLASS Project
+
+    CLASS FIELDS:
+        province                (String)
+        beneficiary             (String)
+        beneficiaryNum          (String)
+        assetClass              (String)
+        name                    (String)
+        stage                   (String)
+        location                (Location)
+
+    CONSTRUCTOR WITH PARAMETERS
+    IMPORTS:    pProvince (String), pBeneficiary (String), pBeneficiaryNum (String), 
+                pAssetClass (String), pName (String), pStage (String), 
+                pLocation (Location)
+    EXPORTS:    None
+    ASSERTION:  Project object created with imported values.
+    ALGOIRITHM: 
+        province <- pProvince
+        beneficiary <- pBeneficiary
+        beneficiaryNum <- pBeneficiaryNum
+        assetClass <- pAssetClass
+        name <- pName
+        stage <- pStage
+        location <- pLocation
+
+    COPY CONSTRUCTOR
+    IMPORT: pProject (Project)
+    EXPORT: None
+    ASSERTION: Object created as a copy of the imported object.
+    ALGORITHM:
+        province <- CALL getProvince ON pProject
+        beneficiary <- CALL getBeneficiary ON pProject
+        beneficiaryNum <- CALL getBeneficiaryNum ON pProject
+        assetClass <- CALL getAssetClass ON pProject
+        name <- CALL getName ON pProject
+        stage <- CALL getStage ON pProject
+        location <- CALL getLocation ON pProject
+
+    ACCESSOR: getProvince
+    IMPORT: None
+    EXPORT: province (String)
+    ALGORITHM:
+        EXPORT: province
+
+    ACCESSOR: getBeneficiary
+    IMPORT: None
+    EXPORT: getBeneficiary
+    ALGORITHM:
+        EXPORT: beneficiary
+
+    ACCESSOR: getBeneficiaryNum
+    IMPORT: None
+    EXPORT: beneficiaryNum 
+    ALGORITHM:
+        EXPORT: beneficiaryNum
+
+    ACCESSOR: getAssetClass
+    IMPORT: None
+    EXPORT: assetClass
+    ALGORITHM:
+        EXPORT: assetClass 
+
+    ACCESSOR: getName
+    IMPORT: None
+    EXPORT: name
+    ALGORITHM:
+        EXPORT: name
+
+    ACCESSOR: getStage
+    IMPORT: None
+    EXPORT: stage 
+    ALGORITHM:
+        EXPORT: stage
+
+    ACCESSOR: getLocation
+    IMPORT: None
+    EXPORT: location 
+    ALGORITHM:
+        EXPORT: location 
+
+    MUTATOR: setProvince
+    IMPORT: pProvince
+    EXPORT: None
+    ASSERTION: State of province is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidString(pProvince) is true THEN
+            province <- pProvince
+        ELSE
+            OUTPUT "Invalid entry detected! Province cannot be null."
+        END IF
+
+    MUTATOR: setBeneficiary
+    IMPORT: pBeneficiary
+    EXPORT: None
+    ASSERTION: State of beneficiary is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidString(pBeneficiary) is true THEN
+            beneficiary <- pBeneficiary
+        ELSE
+            OUTPUT "Invalid entry detected! Beneficiary cannot be null."
+        END IF
+
+    MUTATOR: setBeneficiaryNum
+    IMPORT: pBeneficiaryNum
+    EXPORT: None
+    ASSERTION: State of beneficiaryNum is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidBeneficiaryNum(pBeneficiaryNum) is true THEN
+            beneficiaryNum <- pBeneficiaryNum
+        ELSE
+            OUTPUT "Invalid entry detected! BeneficiaryNum must be between 1 and 9999 (inclusive)."
+        END IF
+
+    MUTATOR: setAssetClass
+    IMPORT: pAssetClass
+    EXPORT: None
+    ASSERTION: State of assetClass is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidString(pAssetClass) is true THEN
+            assetClass <- pAssetClass
+        ELSE
+            OUTPUT "Invalid entry detected! AssetClass cannot be null."
+        END IF
+
+    MUTATOR: setName
+    IMPORT: pName
+    EXPORT: None
+    ASSERTION: State of name is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidString(pName) is true THEN
+            name <- pName
+        ELSE
+            OUTPUT "Invalid entry detected! Name cannot be null."
+        END IF
+
+    MUTATOR: setStage
+    IMPORT: pStage
+    EXPORT: None
+    ASSERTION: State of stage is updated to IMPORTed value
+    ALGORITHM:
+        IF isValidStage(pStage) is true THEN
+            stage <- pStage
+        ELSE
+            OUTPUT "Invalid entry detected! Stage must be 'Ongoing' or 'Completed'."
+        END IF
+
+    MUTATOR: setLocation
+    IMPORT: pLocation
+    EXPORT: boolean
+    ASSERTION: State of location is updated to IMPORTed value
+    ALGORITHM:
+        location <- pLocation
+
+    METHOD: isValidString
+    IMPORT: String value
+    EXPORT: boolean
+    ASSERTION: String value that is IMPORTed is not null
+    ALGORITHM:
+        EXPORT: str != null
+
+    METHOD: isValidBeneficiaryNum
+    IMPORT: pBeneficiaryNum (String)
+    EXPORT: boolean
+    ASSERTION: pBeneficiaryNum value is between 1 and 9999 inclusive
+    ALGORITHM: 
+        TRY
+            beneficiaryNum <- parseInt(num)
+            EXPORT: beneficiaryNum >= 1 AND beneficiaryNum <= 9999
+        CATCH NumberFormatException
+            EXPORT: false
+
+    METHOD isValidStage
+    IMPORT: pStage (String)
+    EXPORT: boolean
+    ASSERTION: pStage value is not null and is either "ongoing" or "completed"
+    ALGORITHM:
+        EXPORT: isValidString(stage) AND (stage.equalsIgnoreCase("Ongoing") OR stage.equalsIgnoreCase("Completed"))
+    
+    METHOD: toString
+    IMPORT: None
+    EXPORT: theString (String)
+    ASSERTION: Returns a String representation of the object.
+    ALGORITHM:
+        theString <- getProvince() + ", " + getBeneficiary() + ", " + getBeneficiaryNum() + ", " + getAssetClass() + ", " + getName() + ", " + getStage() + ", " + getLocation()
+        EXPORT theString
+
+    METHOD: equals
+    IMPORT: inProject (Object)
+    EXPORT: isEqual (Boolean)
+    ASSERTION: Returns true if two objects are equivalent.
+    ALGORITHM:
+        isEqual <- FALSE
+            IF getProvince() EQUALS CALL getProvince ON inProject:
+                IF getBeneficiary() EQUALS CALL getBeneficiary ON inProject:
+                    IF getBeneficiaryNum() EQUALS CALL getBeneficiaryNum ON inProject:
+                        IF getAssetClass() EQUALS CALL getAssetClass ON inProject:
+                            IF getName() EQUALS CALL getName ON inProject:
+                                IF getStage() EQUALS CALL getStage ON inProject:
+                                    IF getLocation() EQUALS CALL getLocation ON inProject:
+                                        isEqual <- TRUE
+        EXPORT isEqual
+
+END CLASS
