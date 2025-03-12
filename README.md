@@ -1,6 +1,6 @@
 # Programming Design and Implementation
 
-Part of my Software Engineering degree at Curtin University Colombo in 2023. My final mark was **87%**.
+Part of my Software Engineering degree at Curtin University Colombo in 2023. My final mark was **79%**.
 
 There’s no proper commit history because it wasn’t developed using GitHub.
 
