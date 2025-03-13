@@ -1,4 +1,4 @@
-# Programming Design and Implementation
+# Programming Design and Implementation (PDI)
 
 Part of my Software Engineering degree at Curtin University Colombo in 2023. 
 
